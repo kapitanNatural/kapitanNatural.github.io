@@ -1,12 +1,9 @@
-
-
-
 <script>
     if (confirm('Доброго времени суток, у этой страницы есть к вам вопрос, вы готовы ответить?')){
     var name = prompt('Как вас зовут?','Введите сюда ваше имя');
     alert("Ваше имя - "+name)
     }
-    alert("Спасибо" +name, "что уделили время")
+    alert("Спасибо"  +name, "что уделили время")
 </script>
 
 <script>
@@ -15,96 +12,208 @@
     alert("Отлично")
 </script>
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- css -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
-    <!-- font -->
-    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-    <!-- icon -->
-    <script src="https://kit.fontawesome.com/235004aab8.js" crossorigin="anonymous"></script>
-    <title>Personal Website Template</title>
 
-</head>
 <body>
-    <div class="info_div">
-        <div class="profile_info">
-        <img src="https://forum.rodina-rp.com/data/avatars/h/106/106670.jpg?1629591422=" alt="profile picture">
-        <h1>Никита Выжлов</h1>
-        <h2><a href="https://github.com/kapitanNatural">@nikitamartynov03@list.ru</h2></a>
-        </div>
-        <div class="icon">
-          <ul>
-              <li>
-                <i class="fab fa-github"><a href="https://github.com/kapitanNatural"></i>GitHub</a></li>
-              <li>
-                <i class="fas fa-map-marker-alt"><a href="https://en.wikipedia.org/wiki/Sri_Lanka"></i>Сызрань</a></li>
-          </ul>
-
-        </div>
-
-        <div class="social_link">
-           <a href="#">
-            <i class="fas fa-laptop-code"></i>
-           </a>
-           <a href="#">
-            <i class="fab fa-facebook"></i>
-           </a>
-            <a href="#">
-            <i class="fab fa-twitter"></i>
-            </a>
-        </div>
+    <p class="resume">Резюме</p>
+    <div class="avatarImage">
+        <img src="ava.jpg" alt="Именно он" class="avatar">
     </div>
-    <div class="main_content">
-      <div class="about" id="center_content">
-        <h3>Приветствую работяги!</h3>
-        <p>Я учусь в Станкине, а в свободное время снимаю ролики для прекрасной команды Ковалёва Ильи Александровича под названием 16к20))).</p>
-        <div>
-          <p>
-          Хочу со стипендии накопить на новый bmw m5 f90
-            </p>
-        </div>
-                <div>
-                  <p>  ∧,,,∧</p> <p>(  ̳• · • ̳)</p> <p>/    づ♡  </p>
-                </div>
-      </div>
-            <div class="skills" id="center_content">
-              <p>Мое направление</p>
-               <ul>
-                 <li>Автоматизация технологических процессов и производств</li>
-                                 <p>Моя группа</p>
-               <u2>
-                 <li>АДБ-21-08</li>
-                                 <p>Мой курс</p>
-               <u3>
-                 <li>2 курс</li>
-                
-
-               </ul>
-            </div>
-                        <div class="products" id="center_content">
-                          <p>Мои достижения:</p>
-                           <div>
-                             <p>7-минутный ролик про ХАКАТОН</p>
-                           </div>
-                         <div>
-                          </div>
-                            </div>
-             <div class="contact" id="center_content">
-               <p>Связь со мной.</p>
-               <ul>
-                 <li>~Телефон~<br><a href="#">88005553535</a></li>
-                 <li>~Моя почта~<br><a href="nikitsdfhfdhov0dfhdhlist.ru">nikitsdfhfdhov0dfhdhlist.ru</a></li>
-               </ul>
-             </div>
-          <footer>
-            <p>Сделано мной для меня</p>
-          </footer>
+    <style>
+        .redText {
+            color: #5a4bad;
+        }
+    </style>
+    
+    <div class="FIO">
+        <span id="FIO">Мартынов</span> Никита Денисович
     </div>
+    <p class="aboutMe">Обо мне:</p>
+    <div class="aboutMeBox">
+        <p class="aboutMeText redText">
+            Студент 3 курса бакалавриата МГТУ "Станкин". Обучаюсь на образование инженера-программиста по направлению - Автоматизация технологических процессов и производств
+        </p>
+    </div>
+    <style>
+        .redText {
+            color: #5a4bad;
+        }
+    </style>
+    <p class="skills">Навыки</p>
+    <div class="skillsBox">
+        <p class="skillsText redText">
+            Работа с различными базами данных. Знание языков программирования. Работа с автоматизированными ЧПУ установками и написание управляющей программы.
+        </p>
+    </div>
+    <label class="inputLabel">Введите фамилию</label>
+    <input type="text" class="inputSurname" placeholder="Мартынов">
+    <button type="button" class="inputButton">Ввод...</button>
+
+    
+  
+
+    <script>
+        let input = document.querySelector('.inputSurname');
+        let inputButton = document.querySelector('.inputButton');
+        let randomColorButton = document.querySelector('.randomColorButton');
+
+        inputButton.addEventListener('click', function () {
+            if (input.value != "") {
+                surname = input.value;
+                var fioElement = document.getElementById("FIO");
+                fioElement.textContent = surname;
+                input.value = "";
+            }
+        });
+
+        randomColorButton.addEventListener('click', function () {
+            let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+            let rgbValue = "#" + randomColor;
+            document.body.style.backgroundColor = rgbValue;
+        });
+    </script>
 </body>
 
-</html>
+<style>
+    body {
+        font-family: Tahoma, serif;
+            text-align: center;
+            background-image: url("fon.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+    }
+    @media (max-width: 768px) {
+            body {
+                background-image: url("fon.jpg");
+            }
+        }
+
+    .resume {
+        margin: 10px 50px 10px 50px;
+        font-weight: bolder;
+        font-style: italic;
+        font-size: 32px;
+        color: #5a4bad;
+    }
+
+    .FIO {
+        margin: 10px 1000px 10px 10px;
+        font-weight: bolder;
+        font-style: italic;
+        font-size: 32px;
+        color: #524d92;
+        
+    }
+
+    .resume:hover {
+        margin: 10px 50px 10px 50px;
+        font-weight: bolder;
+        font-style: italic;
+        font-size: 32px;
+        color: #5a4bad;
+    }
+
+    .avatarImage {
+        padding: 5px;
+        background: #5a4bad;
+        box-shadow: 4px 4px 2px #675ee6;
+        display: inline-block;
+        margin-left: -75%;
+    }
+
+    .avatarImage:hover {
+        padding: 5px; 
+        background: #5a4bad; 
+        box-shadow: 4px 4px 2px #675ee6; 
+        display: inline-block; 
+        margin-left: -75%;
+    }
+
+    .avatarImage img.avatar {
+        width: 250px;
+        height: 250px;
+    }
+
+    .aboutMe {
+        font-weight: bold;
+        font-size: 25px;
+        color: #675ee6;
+        text-shadow: 1px 1px 2px #1aaace;
+        position: relative;
+        top: -350px;
+    }
+
+    .aboutMeBox {
+        font-size: 20px;
+        width: 15em;
+        border: 1px solid #1aaace;
+        box-shadow: 4px 4px 2px #675ee6;
+        padding: 8px 12px;
+        margin: 10px auto;
+        position: relative; 
+        top: -350px
+    }
+
+    .aboutMeBox:hover {
+        width: 15em;
+        border: 1px solid #1aaace;
+        box-shadow: 4px 4px 2px #675ee6;
+        padding: 8px 12px;
+        margin: 0 auto;
+    }
+
+    .aboutMeText {
+        text-align: left;
+    }
+
+    .skills {
+        font-weight: bold;
+        font-size: 25px;
+        color: #675ee6;
+        text-shadow: 1px 1px 2px #1aaace;
+        position: relative;
+        top: -656px;
+        left: 400px;
+    }
+
+    .skillsBox {
+        font-size: 20px;
+        width: 15em;
+        border: 1px solid #1aaace;
+        box-shadow: 4px 4px 2px #675ee6;
+        padding: 8px 12px;
+        margin: 10px auto;
+        position: relative; 
+        top: -656px;
+        left: 400px;
+    }
+
+   
+
+    .skillsText {
+        text-align: left;
+    }
+
+    .inputLabel {
+        font-weight: bold;
+        font-size: 24px;
+        color: #675ee6;
+        text-shadow: 1px 1px 2px #1aaace;
+        top: -6506px;
+    }
+
+    .inputSurname {
+        margin: 50px auto;
+        font-size: 24px;
+        top: -6506px;
+    }
+
+    .inputButton {
+        font-size: 24px;
+        top: -6506px;
+    }
+
+   
+    
+</style>
+</html >
